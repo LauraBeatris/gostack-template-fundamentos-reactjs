@@ -4,7 +4,6 @@ interface UploadProps {
   isDragActive: boolean;
   isDragReject: boolean;
   refKey?: string;
-  [key: string]: any;
   type?: 'error' | 'success' | 'default';
 }
 
@@ -44,7 +43,7 @@ export const UploadMessage = styled.p`
   line-height: 24px;
   padding: 48px 0;
 
-  color: ${({ type }: UploadProps) => messageColors[type || 'default']};
+  color: ${({ type = 'default }: UploadProps) => messageColors[type || 'default']};
 
   justify-content: center;
   align-items: center;
